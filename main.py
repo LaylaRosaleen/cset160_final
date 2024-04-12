@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from sqlalchemy import create_engine, text
-from
 
 app = Flask(__name__)
 
-conn_str = "mysql://root:...password.../onesixfinalproject"
+conn_str = "mysql://root:CSET155@localhost/onesixfinalproject"
 engine = create_engine(conn_str, echo=True)
 conn = engine.connect()
 
@@ -63,6 +62,19 @@ def edit():
                       ":Question_4, :Question_5, :created_by)"), request.form)
     conn.commit()
     return render_template("edit.html")
+
+
+@app.route('/take_test.html', methods=['GET'])
+def get_take_test():
+    return render_template("take_test.html")
+
+
+@app.route('/take_test.html', methods=['POST'])
+def get_take_test_enter():
+    search = conn.execute(text('SELECT * FROM Test_Questions WHERE Test_ID = :Test_ID'), request.form)
+    search_info = search.fetchall()
+    return render_template("take_test.html", Test_Questions=Test_Questions)
+
 
 
 if __name__ == '__main__':
