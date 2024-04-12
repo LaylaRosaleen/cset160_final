@@ -166,6 +166,33 @@ body {
     flex: 2 0px;
   }
 }
+        .body{
+        margin: auto;
+    }
+    .input_field {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .input_submit {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .input_submit:hover {
+      background-color: #45a049;
+    }
     </style>
 </head>
 <body>
@@ -174,13 +201,7 @@ body {
         <div class="">
             <img src="image1.jpg" alt="Logo" class="logo">
             <ul class="barItem">
-                <li><button href="/" onclick="window.location.reload();" style="border:none">HOME</button></li>
-                <li><a href="/create_test.html">CREATE TEST</a></li>
-                <li><a href="/search.html">SEARCH</a></li>
-                <li><a href="/delete.html">DELETE</a></li>
-                <li><a href="/edit.html">EDIT</a></li>
-                <li><a href="/grades.html">TEST GRADE</a></li>
-                <li><a href="/take_test.html">TAKE TEST</a></li>
+                <li><a href="/student.html">RETURN HOME</a></li>
             </ul>
         </div>
 
@@ -199,9 +220,25 @@ body {
     </div>
 </header>
 
-{% block body %}
+<form action="/take_test" method="POST">
+            <input type="number" name="test id" placeholder="Enter Test ID" class="input_field"> <br>
+            <input type="submit" value="Submit" class="input_submit">
+        </form>
+        {% for i in Test_Questions %}
+        <ul>
+            <li>Test ID: {{i[0]}}</li>
+            <li>Test Name: {{i[0]}}</li>
+        <ul>
+            <li>Question-1: {{i[1]}}</li>
+            <li>Question-2: {{i[2]}}</li>
+            <li>Question-3: {{i[3]}}</li>
+            <li>Question-4: {{i[4]}}</li>
+            <li>Question-5: {{i[5]}}</li>
+            <li>Created By: {{i[6]}}</li>
+    </ul>
+</ul>
+        {% endfor %}
 
-{% endblock %}
 
 <footer class="footer">
     <div class="footer__addr">
