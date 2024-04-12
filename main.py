@@ -73,7 +73,7 @@ def get_take_test():
 def get_take_test_enter():
     search = conn.execute(text('SELECT * FROM Test_Questions WHERE Test_ID = :Test_ID'), request.form)
     search_info = search.fetchall()
-    return render_template("take_test.html", Test_Questions=Test_Questions)
+    return render_template("take_test.html", Test_Questions=Test_Questions, visibility="hidden")
 
 
 

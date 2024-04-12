@@ -179,7 +179,7 @@ body {
       box-sizing: border-box;
     }
 
-    .input_submit {
+    .submitbutton {
       width: 100%;
       background-color: #4CAF50;
       color: white;
@@ -190,7 +190,7 @@ body {
       cursor: pointer;
     }
 
-    .input_submit:hover {
+    .submitbutton:hover {
       background-color: #45a049;
     }
     </style>
@@ -222,23 +222,31 @@ body {
 
 <form action="/take_test" method="POST">
             <input type="number" name="test id" placeholder="Enter Test ID" class="input_field"> <br>
-            <input type="submit" value="Submit" class="input_submit">
+            <button class="submitbutton" onclick="TestsFunction()">Take Test</button>
         </form>
+
+
+    <div class="rgrp" style="visibility:{{ visibility }}">
         {% for i in Test_Questions %}
         <ul>
             <li>Test ID: {{i[0]}}</li>
             <li>Test Name: {{i[0]}}</li>
         <ul>
             <li>Question-1: {{i[1]}}</li>
+            <input type="text" name="Question1input" placeholder="Question 1 Input" class="input_field"> <br>
             <li>Question-2: {{i[2]}}</li>
+            <input type="text" name="Question2input" placeholder="Question 2 Input" class="input_field"> <br>
             <li>Question-3: {{i[3]}}</li>
+            <input type="text" name="Question3input" placeholder="Question 3 Input" class="input_field"> <br>
             <li>Question-4: {{i[4]}}</li>
+            <input type="text" name="Question4input" placeholder="Question 4 Input" class="input_field"> <br>
             <li>Question-5: {{i[5]}}</li>
+            <input type="text" name="Question5input" placeholder="Question 5 Input" class="input_field"> <br>
             <li>Created By: {{i[6]}}</li>
     </ul>
 </ul>
         {% endfor %}
-
+</div>
 
 <footer class="footer">
     <div class="footer__addr">
