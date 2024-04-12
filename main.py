@@ -4,7 +4,7 @@ from
 
 app = Flask(__name__)
 
-conn_str = "mysql://root:bcSd4y&689#Hb@localhost/onesixfinalproject"
+conn_str = "mysql://root:...password.../onesixfinalproject"
 engine = create_engine(conn_str, echo=True)
 conn = engine.connect()
 
