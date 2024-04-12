@@ -1,0 +1,15 @@
+{% extends "teacherbase.html"%}
+{% block body %}
+{% for i in test_info %}
+<ul>
+    <li>ID: {{i[0]}}</li>
+    <li>Created By: {{i[0]}}</li>
+    <ul>
+        <li>Teacher Name: {{i[1]}}</li>
+        <li>Test Subject: {{i[2]}}</li>
+        <li>Student Name: {{i[3]}}</li>
+        <li>Student Grade: {{i[4]}}</li>
+    </ul>
+</ul>
+{% endfor %}
+{% endblock %}
