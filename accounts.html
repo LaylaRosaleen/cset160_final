@@ -1,0 +1,12 @@
+{% block body %}
+{% for i in account_info %}
+<ul>
+    <li>ID: {{i[0]}}</li>
+    <ul>
+        <li>Full Name: {{i[1]}}</li>
+        <li>Subject Taught: {{i[2]}}</li>
+        <li>Subject Being Taken: {{i[3]}}</li>
+    </ul>
+</ul>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% block body %}
+{% for i in test_info %}
+<ul>
+    <li>Test ID: {{i[0]}}</li>
+    <li>Test Name: {{i[0]}}</li>
+    <ul>
+        <li>Created By: {{i[1]}}</li>
+        <li>Number Of Students Taken: {{i[2]}}</li>
+    </ul>
+</ul>
+{% endfor %}
+{% endblock %}

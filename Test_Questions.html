@@ -1,0 +1,16 @@
+{% block body %}
+{% for i in search_info %}
+<ul>
+    <li>Test ID: {{i[0]}}</li>
+    <li>Test Name: {{i[0]}}</li>
+    <ul>
+        <li>Question-1: {{i[1]}}</li>
+        <li>Question-2: {{i[2]}}</li>
+        <li>Question-3: {{i[3]}}</li>
+        <li>Question-4: {{i[4]}}</li>
+        <li>Question-5: {{i[5]}}</li>
+        <li>Created By: {{i[6]}}</li>
+    </ul>
+</ul>
+{% endfor %}
+{% endblock %}

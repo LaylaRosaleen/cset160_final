@@ -14,7 +14,6 @@ html{
     font-size: 20px;
     text-rendering: optimizeLegibility;
 }
-
 body {
     font-family: 'Helvetica Neue', sans-serif;
     background-color: #0133b7;
@@ -22,9 +21,8 @@ body {
     text-align: center;
     padding: 5px;
 }
-
 .header{
-    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url("IMG/pexels-photo-2732663.jpeg");
+    background-image: linear-gradient(rgba(246, 246, 246, 0.2), rgba(252, 249, 249, 0.2)), url(image.jpg);
     background-size: cover;
     height: 110vh;
     background-attachment: absolute;
@@ -55,16 +53,12 @@ body {
 </head>
 <body>
 <header class="header">
-    <div class="row">
-        <img src="IMG/lucys_logo.png" alt="Lucy's" class="logo" height="350px" width="auto">
-    </div>
     <section class="MPT" id="MPT">
-        <h1 style="text-align: center;"><font size="+4" font color="">Log in</font></h1>
+        <h1 style="text-align: center;"><font size="+4">Log in</font></h1>
         <p>Username: <input type="text" id="email" maxlength="10"></p>
-        <p>Password: <input type="password" id="pass" maxlength="25"> <button onclick="login()">Log in</button></p>
+        <p>Password: <input type="password" id="pass" maxlength="25"> <button onclick="/teacher.html">Log in</button></p>
         <p>Don't have an account? <a href="signup.html"><button>Sign up</button></a></p>
     </section>
 </header>
-<script src="index.js"></script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<style>
+    .body{
+        margin: auto;
+    }
+    .input_field {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .input_submit {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .input_submit:hover {
+      background-color: #45a049;
+    }
+</style>
+{% extends "teacherbase.html"%}
+{% block body %}
+<div class="body">
+    <form action="/createtest" method="POST">
+        <input type="number" name="Test_ID" placeholder="ID" class="input_field"> <br>
+        <input type="text" name="Test_Name" placeholder="Test name" class="input_field"><br>
+        <input type="text" name="Question_1" placeholder="Question #1" class="input_field"><br>
+        <input type="text" name="Question_2" placeholder="Question #2" class="input_field"><br>
+        <input type="text" name="Question_3" placeholder="Question #3" class="input_field"><br>
+        <input type="text" name="Question_4" placeholder="Question #4" class="input_field"><br>
+        <input type="text" name="Question_5" placeholder="Question #5" class="input_field"><br>
+        <input type="text" name="Created_By" placeholder="Created By" class="input_field" step="0.01"><br>
+        <input type="submit" value="Submit" class="input_submit">
+    </form>
+</div>
+{% endblock %}
