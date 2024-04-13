@@ -1,9 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request
 from sqlalchemy import create_engine, text
 
 app = Flask(__name__)
-
-conn_str = "mysql://root:CSET155@localhost/onesixfinalproject"
+conn_str = "mysql://root:bcSd4y&689#Hb@localhost/onesixfinalproject"
 engine = create_engine(conn_str, echo=True)
 conn = engine.connect()
 
@@ -16,7 +15,7 @@ def get_grades():
 
 
 @app.route("/createtest", methods=['GET'])
-def createtest():
+def get_createtest():
     return render_template("create_boats.html")
 
 
@@ -34,25 +33,25 @@ def get_search():
 
 @app.route('/search.html', methods=['POST'])
 def create_search():
-    search = conn.execute(text('SELECT * FROM accounts WHERE id = :id'), request.form)
+    search = conn.execute(text('SELECT * FROM accounts WHERE Test_ID = :Test_ID'), request.form)
     search_info = search.fetchall()
     return render_template("search.html", search_info=search_info)
 
 
 @app.route('/delete.html', methods=['GET'])
-def delete():
+def get_delete():
     return render_template("delete.html")
 
 
 @app.route('/delete.html', methods=['POST'])
 def delete():
-    conn.execute(text('DELETE FROM test_questions WHERE (test_id = :test_id)'), request.form)
+    conn.execute(text('DELETE FROM test_questions WHERE (Test_ID = :Test_ID)'), request.form)
     conn.commit()
     return render_template("delete.html")
 
 
 @app.route('/edit.html', methods=['GET'])
-def edit():
+def get_edit():
     return render_template("edit.html")
 
 
@@ -70,11 +69,10 @@ def get_take_test():
 
 
 @app.route('/take_test.html', methods=['POST'])
-def get_take_test_enter():
+def take_test_enter():
     search = conn.execute(text('SELECT * FROM Test_Questions WHERE Test_ID = :Test_ID'), request.form)
     search_info = search.fetchall()
     return render_template("take_test.html", Test_Questions=Test_Questions)
-
 
 
 if __name__ == '__main__':
